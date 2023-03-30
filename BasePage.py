@@ -1,6 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from selenium.webdriver.common.keys import Keys
 import conftest
 
 
@@ -30,3 +30,6 @@ class SearchHelper(BasePage):
 
     def get_text(self, locator):
         return self.find_element(locator, time=15).text
+
+    def get_escape(self, locator):
+        return self.find_element(locator, time=15).send_keys(Keys.ESCAPE)

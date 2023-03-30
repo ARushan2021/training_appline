@@ -66,7 +66,7 @@ class Steps(SearchHelper):
         fill_application.enter_word(Locators.ARRIVAL_CITY, "Санкт-Петербург")
         fill_application.enter_word(Locators.DEPARTURE_DATE_PLAN, "06.03.2023")
         fill_application.enter_word(Locators.RETURN_DATE_PLAN, "05.04.2023")
-        fill_application.click_on_the_search(Locators.CLOSE_CALENDAR_DATE_PLAN)
+        fill_application.get_escape(Locators.CLOSE_CALENDAR_DATE_PLAN)
         time.sleep(10)
 
     #def assert_aclication(self):
