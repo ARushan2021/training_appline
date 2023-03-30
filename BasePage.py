@@ -22,11 +22,10 @@ class SearchHelper(BasePage):
 
     def enter_word(self, locator, word):
         search_field = self.find_element(locator)
-        search_field.click()
         search_field.send_keys(word)
         return search_field
 
-    def click_on_the_search_button(self, locator):
+    def click_on_the_search(self, locator):
         return self.find_element(locator, time=15).click()
 
     def get_text(self, locator):
