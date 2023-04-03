@@ -1,4 +1,4 @@
-class Enviropments:
+class EnvirTrainingAppline:
     LOGIN = ("Sekretar Kompanii")
     PASSWORD = ("testing")
     ARRIVAL_CITY = ("Санкт-Петербург")
