@@ -1,5 +1,6 @@
 class EnvirTrainingAppline:
-    LOGIN = ("Sekretar Kompanii")
+    LOGIN1 = ("Sekretar Kompanii")
+    LOGIN2 = ("Taraskina Valeriya")
     PASSWORD = ("testing")
     ARRIVAL_CITY = ("Санкт-Петербург")
     DEPARTURE_DATE = ("06.03.2023")

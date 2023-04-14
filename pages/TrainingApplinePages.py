@@ -7,9 +7,15 @@ from pages.BasePage import BasePage
 
 
 class Steps(BasePage):
-    @allure.step("Авторизация на сайте")
-    def authorization(self):
-        self.find_element(Locators.LOGIN).send_keys(EnvirTrainingAppline.LOGIN)
+    @allure.step("Авторизация на сайте, пользователь - Sekretar Kompanii")
+    def authorization1(self):
+        self.find_element(Locators.LOGIN).send_keys(EnvirTrainingAppline.LOGIN1)
+        self.find_element(Locators.PASSWORD).send_keys(EnvirTrainingAppline.PASSWORD)
+        self.find_element(Locators.BUT_AUTH).click()
+
+    @allure.step("Авторизация на сайте, пользователь - Taraskina Valeriya")
+    def authorization2(self):
+        self.find_element(Locators.LOGIN).send_keys(EnvirTrainingAppline.LOGIN2)
         self.find_element(Locators.PASSWORD).send_keys(EnvirTrainingAppline.PASSWORD)
         self.find_element(Locators.BUT_AUTH).click()
 

@@ -9,9 +9,8 @@ class Locators:
     PASSWORD = (By.ID, "prependedInput2")
     BUT_AUTH = (By.ID, "_submit")
     SUBTITLE = (By.XPATH, "//h1[@class='oro-subtitle']")
-    EXPENSES = (By.XPATH, "//*[@id='main-menu']/ul/li[2]/a/span[text()='Расходы']")
-    MENU_BUSSINES_TRIP = (By.XPATH,
-                          "//*[@id='main-menu']/ul/li[2]/a/span/ancestor::li//ul[@class='dropdown-menu menu_level_1']")
+    EXPENSES = (By.XPATH, "//div[@id='main-menu']/ul//a/span[text()='Расходы']")
+    MENU_BUSSINES_TRIP = (By.XPATH, "//span[text()='Командировки']")
     NEW_BUSSINES_TRIP = (By.XPATH, "//a[@title='Создать командировку']")
     BUSSINES_TRIP_HEADING = (By.XPATH, "//h1[@class='user-name']")
     DIVISION = (By.XPATH, f"//option[text()='{EnvirTrainingAppline.DIVISION}']")
