@@ -1,6 +1,6 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-
+from selenium import webdriver
 from locators.training_appline_locators import Locators
 
 
@@ -20,3 +20,6 @@ class BasePage:
     def loading(self, time=30):
         return WebDriverWait(self.driver, time).until(EC.invisibility_of_element_located(Locators.LOADER_MASK),
                                                       message=f'Страница не успела загрузиться!')
+
+
+
