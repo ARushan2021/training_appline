@@ -14,7 +14,7 @@ def driver():
 
 @pytest.fixture(scope='function')
 def screenshot(driver):
-    yield driver
+    yield
     allure.attach(driver.get_screenshot_as_png(), name="Screenshot", attachment_type=AttachmentType.PNG)
 
 

@@ -7,16 +7,10 @@ from pages.BasePage import BasePage
 
 
 class Steps(BasePage):
-    @allure.step("Авторизация на сайте, пользователь - Sekretar Kompanii")
-    def authorization1(self):
-        self.find_element(Locators.LOGIN).send_keys(EnvirTrainingAppline.LOGIN1)
-        self.find_element(Locators.PASSWORD).send_keys(EnvirTrainingAppline.PASSWORD)
-        self.find_element(Locators.BUT_AUTH).click()
-
-    @allure.step("Авторизация на сайте, пользователь - Taraskina Valeriya")
-    def authorization2(self):
-        self.find_element(Locators.LOGIN).send_keys(EnvirTrainingAppline.LOGIN2)
-        self.find_element(Locators.PASSWORD).send_keys(EnvirTrainingAppline.PASSWORD)
+    @allure.step("Авторизация на сайте")
+    def authorization(self, login, password):
+        self.find_element(Locators.LOGIN).send_keys(login)
+        self.find_element(Locators.PASSWORD).send_keys(password)
         self.find_element(Locators.BUT_AUTH).click()
 
     @allure.step("Проверка заголовка 'Панель быстрого запуска'")
@@ -56,19 +50,19 @@ class Steps(BasePage):
         self.find_element(Locators.MAIN_INFORMATION).click()
         assert EnvirTrainingAppline.DIVISION == self.find_element(Locators.DIVISION).text, \
             f"Поле *{EnvirTrainingAppline.DIVISION}* заполненно не верно!"
-        assert EnvirTrainingAppline.ORGANIZATION == self.find_element(Locators.BUSINESS_TRIP_COMPANY).get_attribute\
+        assert EnvirTrainingAppline.ORGANIZATION == self.find_element(Locators.BUSINESS_TRIP_COMPANY).get_attribute \
             ("value"), f"Поле *{EnvirTrainingAppline.ORGANIZATION}* заполненно не верно!"
         assert "true" == self.find_element(Locators.CHECK_BOX_TICKETS).get_attribute("checked"), \
             "В поле *Задачи* Чек-бокс должен стоять на *Заказ билетов*!"
         self.find_element(Locators.INFORMATION_BUTTON).click()
-        assert EnvirTrainingAppline.DEPARTURE_CITY == self.find_element(Locators.DEPARTURE_CITY).get_attribute\
+        assert EnvirTrainingAppline.DEPARTURE_CITY == self.find_element(Locators.DEPARTURE_CITY).get_attribute \
             ("value"), f"Поле *{EnvirTrainingAppline.DEPARTURE_CITY}* заполненно не верно!"
         assert EnvirTrainingAppline.ARRIVAL_CITY == self.find_element(Locators.ARRIVAL_CITY).get_attribute("value"), \
             f"Поле *{EnvirTrainingAppline.ARRIVAL_CITY}* заполненно не верно!"
         assert EnvirTrainingAppline.DEPARTURE_DATE == self.find_element(Locators.DEPARTURE_DATE_PLAN).get_attribute(
             "value"), \
             f"Поле *{EnvirTrainingAppline.DEPARTURE_DATE}* заполненно не верно!"
-        assert EnvirTrainingAppline.RETURN_DATE == self.find_element(Locators.RETURN_DATE_PLAN).get_attribute\
+        assert EnvirTrainingAppline.RETURN_DATE == self.find_element(Locators.RETURN_DATE_PLAN).get_attribute \
             ("value"), f"Поле *{EnvirTrainingAppline.RETURN_DATE}* заполненно не верно!"
 
     @allure.step("Сохранение заполненных полей")
