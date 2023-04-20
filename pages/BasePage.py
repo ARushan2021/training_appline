@@ -1,6 +1,5 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium import webdriver
 from locators.training_appline_locators import Locators
 
 
