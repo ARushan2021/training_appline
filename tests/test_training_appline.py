@@ -3,7 +3,6 @@ import allure
 from pages.TrainingApplinePages import Steps
 
 
-
 @allure.suite("Портал: Training Appline")
 class TestTrainingAppline():
     @allure.feature("Командировка")

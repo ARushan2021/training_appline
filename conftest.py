@@ -8,10 +8,8 @@ from selenium import webdriver
 def driver():
     driver = webdriver.Chrome("driver/chromedriver.exe")
     driver.maximize_window()
-    print('драйвер запущен')
     yield driver
     driver.quit()
-    print('драйвер лег')
 
 
 @pytest.fixture(scope='function')
